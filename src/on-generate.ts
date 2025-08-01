@@ -38,8 +38,6 @@ const generateNameMapping = (models: readonly DMMF.Model[]): NameMapping => {
   return mappings;
 };
 
-// @todo-soon make ouput optional
-
 export const onGenerate = async (options: GeneratorOptions) => {
   const config = parseConfig(options.generator.config);
 

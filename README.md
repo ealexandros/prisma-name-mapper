@@ -17,7 +17,7 @@ When you use Prisma, you often define your models in camelCase and your database
 
 Prisma Name Mapper solves this by automatically generating a TypeScript object that maps your Prisma model and field names to their corresponding database names.
 
-## 🎁 Example Output
+## 📦 Example Output
 
 Given a Prisma schema like this:
 
@@ -79,9 +79,7 @@ In your schema.prisma file, add the dbnames generator:
 
 generator dbnames {
   provider = "prisma-name-mapper"
-
   // (Required) Define a custom output path.
-  // Default: "../node_modules/.prisma/client/mapper.ts"
   output = "../generated/mapper.ts"
 }
 
@@ -105,20 +103,24 @@ This utility becomes incredibly useful in a variety of scenarios:
 - Raw SQL Queries: Write type-safe raw SQL queries without hardcoding table or column names.
 
 ```typescript
-import { PrismaNameMapper } from "../generated/mapper";
-import { prisma } from "./prisma";
+import { PrismaNameMapper } from "@/prisma/generated/mapper";
+import { prisma } from "@/lib/prisma/client";
 
 const userId = "some-user-id";
-const users = await prisma.$queryRawUnsafe(
-  `SELECT * FROM "${PrismaNameMapper.User.dbName}" WHERE "${PrismaNameMapper.User.fields.id}" = $1`,
-  userId,
-);
+const userTable = Prisma.raw(PrismaNameMapper.User.dbName);
+const userIdCol = Prisma.raw(PrismaNameMapper.User.fields.id);
+
+const query = Prisma.sql`
+  SELECT * FROM ${userTable} u WHERE ${userIdCol} = $1
+`;
+const users = await prisma.$queryRaw(query userId);
 ```
 
 - Database Utilities & Seeding: Build scripts for migrations, seeding, or data manipulation with confidence.
 
 ```typescript
 // A script to count users
+
 const userTable = PrismaNameMapper.User.dbName;
 console.log(`There are ${count} rows in the ${userTable} table.`);
 ```
@@ -135,4 +137,4 @@ Contributions are welcome! If you have a feature request, bug report, or want to
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-Made with ❤️ by Alex
+Made with ❤️ – Built for the Community 🤲

@@ -2,7 +2,7 @@
   "name": "prisma-name-mapper",
   "version": "1.0.0",
   "description": "A Prisma generator that outputs a TypeScript map of model and field names to their database names.",
-  "author": "Alexandros Eleftheriadis <ealexandros.cs@gmail.com>",
+  "author": "ealexandros",
   "license": "MIT",
   "homepage": "https://github.com/ealexandros/prisma-name-mapper#readme",
   "bugs": {

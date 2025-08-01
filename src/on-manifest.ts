@@ -10,7 +10,7 @@ export const onManifest = (): GeneratorManifest => {
 
   return {
     version,
-    defaultOutput: "generated/mapper/index.ts",
+    defaultOutput: "generated/name-mapper/index.ts",
     prettyName: "Prisma Name Mapper",
   };
 };
