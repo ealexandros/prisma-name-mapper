@@ -1,0 +1,57 @@
+{
+  "name": "prisma-name-mapper",
+  "version": "1.0.0",
+  "description": "A Prisma generator that outputs a TypeScript map of model and field names to their database names.",
+  "author": "Alexandros Eleftheriadis <ealexandros.cs@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/ealexandros/prisma-name-mapper#readme",
+  "bugs": {
+    "url": "https://github.com/ealexandros/prisma-name-mapper/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ealexandros/prisma-name-mapper.git"
+  },
+  "types": "dist/index.d.ts",
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "bin": {
+    "prisma-name-mapper": "index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prettier:check": "bunx prettier --check .",
+    "prettier:write": "bunx prettier --write .",
+    "prepare": "husky",
+    "prepublishOnly": "bun run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "prisma",
+    "generator",
+    "typescript"
+  ],
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "eslint": "^9.32.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.6.2"
+  },
+  "peerDependencies": {
+    "@prisma/client": "^6.13",
+    "prisma": "^6.13",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@prisma/generator-helper": "^6.13.0"
+  },
+  "lint-staged": {
+    "*.{json,js,jsx,ts,tsx}": [
+      "bun run prettier:write"
+    ]
+  },
+  "packageManager": "^bun@1.2.19"
+}

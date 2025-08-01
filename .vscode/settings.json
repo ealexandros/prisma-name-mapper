@@ -1,0 +1,47 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+
+  "[json,js,ts,tsx,jsx,prisma]": {
+    "editor.formatOnSave": true
+  },
+
+  "search.exclude": {
+    "**/.vscode": true
+  },
+
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
+
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always",
+    "source.sortPackageJson": "always"
+  },
+  "editor.tabSize": 2,
+
+  "todohighlight.keywords": [
+    {
+      "text": "@todo-now",
+      "color": "#DCDCDC",
+      "backgroundColor": "#CA181D"
+    },
+    "@todo-soon",
+    "@todo-later",
+    "@todo",
+    {
+      "text": "TODO:",
+      "color": "#5D4101",
+      "backgroundColor": "#F4B934"
+    }
+  ],
+  "todohighlight.defaultStyle": {
+    "color": "#5D4101",
+    "backgroundColor": "#F4B934",
+    "borderRadius": "2px",
+    "fontWeight": "600",
+    "border": "0"
+  }
+}

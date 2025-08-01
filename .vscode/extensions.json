@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "prisma.prisma",
+    "wix.vscode-import-cost",
+    "wayou.vscode-todo-highlight"
+  ]
+}
