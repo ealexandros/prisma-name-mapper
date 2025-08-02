@@ -26,7 +26,10 @@
     "prepublishOnly": "bun run build"
   },
   "files": [
-    "dist"
+    "dist",
+    "package.json",
+    "LICENSE",
+    "README.md"
   ],
   "keywords": [
     "prisma",

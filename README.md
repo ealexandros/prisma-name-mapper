@@ -43,7 +43,8 @@ This generator will create the following file, giving you type-safe access to yo
 
 export const PrismaNameMapper = {
   User: {
-    dbName: "user_table",
+    tableName: "user",
+    schema: "public",
     fields: {
       id: "user_id",
       fullName: "full_name",
@@ -111,7 +112,7 @@ const userTable = Prisma.raw(PrismaNameMapper.User.dbName);
 const userIdCol = Prisma.raw(PrismaNameMapper.User.fields.id);
 
 const query = Prisma.sql`
-  SELECT * FROM ${userTable} u WHERE ${userIdCol} = $1
+  SELECT * FROM ${userTable} WHERE ${userIdCol} = $1
 `;
 const users = await prisma.$queryRaw(query userId);
 ```
