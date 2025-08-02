@@ -108,7 +108,7 @@ import { PrismaNameMapper } from "@/prisma/generated/mapper";
 import { prisma } from "@/lib/prisma/client";
 
 const userId = "some-user-id";
-const userTable = Prisma.raw(PrismaNameMapper.User.dbName);
+const userTable = Prisma.raw(PrismaNameMapper.User.tableName);
 const userIdCol = Prisma.raw(PrismaNameMapper.User.fields.id);
 
 const query = Prisma.sql`
@@ -122,7 +122,7 @@ const users = await prisma.$queryRaw(query userId);
 ```typescript
 // A script to count users
 
-const userTable = PrismaNameMapper.User.dbName;
+const userTable = PrismaNameMapper.User.tableName;
 console.log(`There are ${count} rows in the ${userTable} table.`);
 ```
 
