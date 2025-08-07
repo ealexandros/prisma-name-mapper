@@ -86,8 +86,8 @@ This generator will create the following file, giving you type-safe access to yo
 
 export const PrismaNameMapper = {
   User: {
-    tableName: "user",
-    schema: "public",
+    tableName: "users",
+    schema: null,
     fields: {
       id: "user_id",
       fullName: "full_name",
